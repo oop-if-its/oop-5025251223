@@ -1,0 +1,34 @@
+// File ini berisi TODO -- lihat SOAL.md untuk kontrak lengkap tiap level.
+// Bagian bertanda TODO(Level N) adalah tugas kalian; kode lain sudah
+// disediakan. Jangan mengubah nama/tipe yang sudah ada kecuali TODO
+// memintanya secara eksplisit.
+
+namespace Pertemuan05;
+
+// Pewarisan tunggal: Mahasiswa "adalah sebuah" Anggota.
+public class Mahasiswa : Anggota
+{
+    public string Nrp { get; }
+    public string Prodi { get; }
+
+    // TODO(Level 4): Mahasiswa boleh meminjam maksimal 3 buku -- atur
+    //   BatasPinjam = 3 di konstruktor ini (setter-nya protected, jadi bisa
+    //   diakses dari kelas turunan).
+    public Mahasiswa(string id, string nama, Alamat alamat, string nrp, string prodi)
+        : base(id, nama, alamat)
+    {
+        if (string.IsNullOrWhiteSpace(nrp))
+            throw new ArgumentException("NRP tidak boleh kosong.", nameof(nrp));
+        if (string.IsNullOrWhiteSpace(prodi))
+            throw new ArgumentException("Prodi tidak boleh kosong.", nameof(prodi));
+
+        Nrp = nrp;
+        Prodi = prodi;
+        BatasPinjam = 3;
+    }
+
+    public string InfoLengkap()
+    {
+        return $"{Info()} | NRP: {Nrp} | Prodi: {Prodi} | Alamat: {Alamat}";
+    }
+}

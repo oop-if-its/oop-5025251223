@@ -1,0 +1,26 @@
+// File ini berisi TODO -- lihat SOAL.md untuk kontrak lengkap tiap level.
+// Bagian bertanda TODO(Level N) adalah tugas kalian; kode lain sudah
+// disediakan. Jangan mengubah nama/tipe yang sudah ada kecuali TODO
+// memintanya secara eksplisit.
+
+namespace Pertemuan05;
+
+public class Dosen : Anggota
+{
+    public string Nip { get; }
+
+    public Dosen(string id, string nama, Alamat alamat, string nip)
+        : base(id, nama, alamat)
+    {
+        if (string.IsNullOrWhiteSpace(nip))
+            throw new ArgumentException("NIP tidak boleh kosong.", nameof(nip));
+
+        Nip = nip;
+        BatasPinjam = 10;
+    }
+
+    public string InfoLengkap()
+    {
+        return $"{Info()} | NIP: {Nip} | Alamat: {Alamat}";
+    }
+}

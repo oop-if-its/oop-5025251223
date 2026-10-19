@@ -18,7 +18,16 @@ public class Kasir
         //   p.Item.HitungDenda(p.HariTerlambat) untuk semua peminjaman. JANGAN
         //   memeriksa jenis item (tidak boleh ada if/is/switch atas tipe) --
         //   biarkan polimorfisme bekerja.
-        throw new NotImplementedException("Level 6 belum diimplementasikan");
+        //catatan say: Validasi null dan menjumlahkan denda menggunakan polimorfisme murni (Level 6)
+        if (daftar == null)
+            throw new ArgumentNullException(nameof(daftar));
+
+        int total = 0;
+        foreach (var p in daftar)
+        {
+            total += p.Item.HitungDenda(p.HariTerlambat);
+        }
+        return total;
     }
 
     public Item? ItemDenganDendaTertinggi(IEnumerable<Peminjaman> daftar)
@@ -26,6 +35,23 @@ public class Kasir
         // TODO(Level 6): null -> ArgumentNullException; kembalikan Item dengan
         //   denda TERTINGGI (kalau seri, ambil yang pertama muncul); daftar
         //   kosong -> null.
-        throw new NotImplementedException("Level 6 belum diimplementasikan");
+        //catatan say: Mencari item dengan denda tertinggi secara polimorfik tanpa memeriksa tipe (Level 6)
+        if (daftar == null)
+            throw new ArgumentNullException(nameof(daftar));
+
+        Item? itemTertinggi = null;
+        int dendaTertinggi = -1;
+
+        foreach (var p in daftar)
+        {
+            int denda = p.Item.HitungDenda(p.HariTerlambat);
+            if (denda > dendaTertinggi)
+            {
+                dendaTertinggi = denda;
+                itemTertinggi = p.Item;
+            }
+        }
+
+        return itemTertinggi;
     }
 }

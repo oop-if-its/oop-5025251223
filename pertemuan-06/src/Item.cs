@@ -22,33 +22,53 @@ public class Item
 
     // TODO(Level 2): jadikan method ini `virtual` supaya bisa di-override (lalu
     //   tulis override-nya di Buku, Majalah, Dvd).
-    public int HitungDenda(int hariTerlambat)
+    public virtual int HitungDenda(int hariTerlambat)
     {
         // TODO(Level 1): denda umum = Rp1.000 per hari terlambat. hariTerlambat
         //   <= 0 -> 0.
-        throw new NotImplementedException("Level 1 belum diimplementasikan");
+        //catatan say: Denda umum Rp1.000 per hari, jika <= 0 maka denda 0 (Level 1)
+        if (hariTerlambat <= 0)
+            return 0;
+        return hariTerlambat * 1000;
     }
 
     // TODO(Level 4): jadikan properti ini `virtual`, lalu override di Buku (14),
     //   Majalah (3), dan Dvd (2).
-    public int MasaPinjamHari => 7;
+    //catatan say: Properti MasaPinjamHari dijadikan virtual dengan nilai dasar 7 (Level 4)
+    public virtual int MasaPinjamHari => 7;
 
     // TODO(Level 5): jadikan `virtual`; override di Buku/Majalah/Dvd dengan
     //   MEMANGGIL versi induk lewat base.Deskripsi() lalu menambahkan detailnya.
-    public string Deskripsi()
+    public virtual string Deskripsi()
     {
         // TODO(Level 5): kembalikan "[<Judul>]" -- mis. "[Bumi Manusia]".
-        throw new NotImplementedException("Level 5 belum diimplementasikan");
+        //catatan say: Method Deskripsi mengembalikan format "[<Judul>]" (Level 5)
+        return $"[{Judul}]";
     }
 
     public override string ToString()
     {
         // TODO(Level 5): kembalikan Deskripsi() (dipanggil secara polimorfik --
         //   jenis objek yang sebenarnya menentukan hasilnya).
-        throw new NotImplementedException("Level 5 belum diimplementasikan");
+        //catatan say: Override ToString() untuk mengembalikan Deskripsi() secara polimorfik (Level 5)
+        return Deskripsi();
     }
 
     // TODO(Level 10 (bonus)): override Equals(object?) dan GetHashCode(): dua
     //   Item dianggap SAMA bila jenis (GetType()) sama DAN Judul sama (huruf
     //   besar/kecil diabaikan). GetHashCode harus konsisten dengan Equals.
+    //catatan say: Override Equals dan GetHashCode berdasarkan jenis (GetType) dan Judul (ignore case) (Level 10)
+    public override bool Equals(object? obj)
+    {
+        if (obj is not Item other)
+            return false;
+
+        return GetType() == other.GetType() &&
+               string.Equals(Judul, other.Judul, StringComparison.OrdinalIgnoreCase);
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(GetType(), Judul?.ToLowerInvariant());
+    }
 }

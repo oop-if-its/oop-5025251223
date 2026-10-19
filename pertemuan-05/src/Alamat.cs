@@ -1,5 +1,6 @@
 namespace Pertemuan05;
 
+
 public class Alamat
 {
     //catatan say: Properti get-only untuk Jalan dan Kota sesuai ketentuan Level 1

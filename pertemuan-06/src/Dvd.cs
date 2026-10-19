@@ -19,9 +19,24 @@ public class Dvd : Item
 
     // TODO(Level 3): override HitungDenda(int): Rp5.000 per hari terlambat,
     //   TETAPI dibatasi maksimum Rp50.000 (hariTerlambat <= 0 -> 0).
+    //catatan say: Override HitungDenda untuk DVD Rp5.000 per hari dengan batas maksimal Rp50.000 (Level 3)
+    public override int HitungDenda(int hariTerlambat)
+    {
+        if (hariTerlambat <= 0)
+            return 0;
+        int denda = hariTerlambat * 5000;
+        return denda > 50000 ? 50000 : denda;
+    }
 
     // TODO(Level 4): override MasaPinjamHari -> 2.
+    //catatan say: Override MasaPinjamHari menjadi 2 hari untuk DVD (Level 4)
+    public override int MasaPinjamHari => 2;
 
     // TODO(Level 5): override Deskripsi() -> "<base.Deskripsi()> (<DurasiMenit>
     //   menit)", mis. "[Laskar Pelangi] (125 menit)".
+    //catatan say: Override Deskripsi dengan memanggil base.Deskripsi() dan menambahkan durasi (Level 5)
+    public override string Deskripsi()
+    {
+        return $"{base.Deskripsi()} ({DurasiMenit} menit)";
+    }
 }

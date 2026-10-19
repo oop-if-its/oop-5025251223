@@ -14,14 +14,23 @@ public static class PemilahItem
         // TODO(Level 7): null -> ArgumentNullException; kembalikan hanya item
         //   yang bertipe Buku (urutan asli dipertahankan). Boleh dengan
         //   `is`/`as` di dalam foreach atau OfType<Buku>().
-        throw new NotImplementedException("Level 7 belum diimplementasikan");
+        //catatan say: Mengambil objek bertipe Buku menggunakan OfType<Buku>() (Level 7)
+        if (daftar == null)
+            throw new ArgumentNullException(nameof(daftar));
+
+        return daftar.OfType<Buku>().ToList();
     }
 
     public static string? PenulisAtauNull(Item item)
     {
         // TODO(Level 7): kembalikan Penulis kalau item adalah Buku, selain itu
         //   null. Pakai pattern matching `is Buku b`.
-        throw new NotImplementedException("Level 7 belum diimplementasikan");
+        //catatan say: Pattern matching untuk mengambil penulis jika item adalah Buku (Level 7)
+        if (item is Buku b)
+        {
+            return b.Penulis;
+        }
+        return null;
     }
 
     public static Buku KeBuku(Item item)
@@ -30,7 +39,11 @@ public static class PemilahItem
         //   EXPLICIT CAST `(Buku)item` -- kalau item bukan Buku, biarkan .NET
         //   melempar InvalidCastException (jangan ditangkap, jangan diganti
         //   pesan sendiri).
-        throw new NotImplementedException("Level 8 belum diimplementasikan");
+        //catatan say: Explicit cast ke Buku, membiarkan InvalidCastException jika gagal (Level 8)
+        if (item == null)
+            throw new ArgumentNullException(nameof(item));
+
+        return (Buku)item;
     }
 
     public static bool CobaKeBuku(Item? item, out Buku? buku)
@@ -38,6 +51,13 @@ public static class PemilahItem
         // TODO(Level 8): pola TryXxx -- kembalikan true dan isi `buku` kalau
         //   item adalah Buku; selain itu (termasuk item null) kembalikan false
         //   dan isi `buku` = null. TIDAK boleh melempar exception.
-        throw new NotImplementedException("Level 8 belum diimplementasikan");
+        //catatan say: Pola TryXxx menggunakan pattern matching is Buku b tanpa melempar exception (Level 8)
+        if (item is Buku b)
+        {
+            buku = b;
+            return true;
+        }
+        buku = null;
+        return false;
     }
 }

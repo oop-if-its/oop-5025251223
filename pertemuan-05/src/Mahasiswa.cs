@@ -1,5 +1,6 @@
 namespace Pertemuan05;
 
+
 public class Mahasiswa : Anggota
 {
     public string Nrp { get; }

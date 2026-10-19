@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+
 namespace Pertemuan05;
 
 public class Anggota

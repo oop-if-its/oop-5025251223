@@ -12,19 +12,25 @@ public class Pemroses
     public string Proses(Item item)
     {
         // TODO(Level 9): kembalikan "Item: <Judul>".
-        throw new NotImplementedException("Level 9 belum diimplementasikan");
+        //catatan say: Overloading method Proses untuk Item (Level 9)
+        if (item == null) throw new ArgumentNullException(nameof(item));
+        return $"Item: {item.Judul}";
     }
 
     public string Proses(Buku buku)
     {
         // TODO(Level 9): kembalikan "Buku: <Judul>".
-        throw new NotImplementedException("Level 9 belum diimplementasikan");
+        //catatan say: Overloading method Proses untuk Buku (Level 9)
+        if (buku == null) throw new ArgumentNullException(nameof(buku));
+        return $"Buku: {buku.Judul}";
     }
 
     public string Proses(Majalah majalah)
     {
         // TODO(Level 9): kembalikan "Majalah: <Judul>".
-        throw new NotImplementedException("Level 9 belum diimplementasikan");
+        //catatan say: Overloading method Proses untuk Majalah (Level 9)
+        if (majalah == null) throw new ArgumentNullException(nameof(majalah));
+        return $"Majalah: {majalah.Judul}";
     }
 
     public string Kategori(Item item)
@@ -32,6 +38,16 @@ public class Pemroses
         // TODO(Level 9): null -> ArgumentNullException. Pakai switch EXPRESSION
         //   dengan type pattern: Buku -> "Buku", Majalah -> "Majalah", Dvd ->
         //   "DVD", selain itu (Item biasa) -> "Item".
-        throw new NotImplementedException("Level 9 belum diimplementasikan");
+        //catatan say: Switch expression dengan type pattern untuk menentukan kategori (Level 9)
+        if (item == null)
+            throw new ArgumentNullException(nameof(item));
+
+        return item switch
+        {
+            Buku => "Buku",
+            Majalah => "Majalah",
+            Dvd => "DVD",
+            _ => "Item"
+        };
     }
 }

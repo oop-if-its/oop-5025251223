@@ -1,5 +1,6 @@
 namespace Pertemuan05;
 
+
 //catatan say: Kelas Asisten diturunkan dari Mahasiswa dan disegel (sealed)
 public sealed class Asisten : Mahasiswa
 {

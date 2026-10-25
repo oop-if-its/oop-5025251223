@@ -1,44 +1,33 @@
-// File ini berisi TODO -- lihat SOAL.md untuk kontrak lengkap tiap level.
-// Bagian bertanda TODO(Level N) adalah tugas kalian; kode lain sudah
-// disediakan. Jangan mengubah nama/tipe yang sudah ada kecuali TODO
-// memintanya secara eksplisit.
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Pertemuan05;
 
-// Komposisi: Perpustakaan MEMILIKI kumpulan Anggota. Karena Mahasiswa dan Dosen
-// adalah Anggota, satu daftar bertipe Anggota bisa menampung keduanya.
 public class Perpustakaan
 {
-    private readonly List<Anggota> _anggota = new();
+    public List<Anggota> DaftarAnggota { get; set; } = new List<Anggota>();
+    public int JumlahAnggota => DaftarAnggota.Count;
 
-    public int JumlahAnggota => _anggota.Count;
+    // Level 8: Menghitung Mahasiswa (termasuk Asisten karena Asisten adalah turunan Mahasiswa)
+    public int JumlahMahasiswa() => DaftarAnggota.OfType<Mahasiswa>().Count();
+    
+    // Level 8: Menghitung Dosen
+    public int JumlahDosen() => DaftarAnggota.OfType<Dosen>().Count();
 
+    // Level 8: Daftarkan anggota dengan validasi
     public void Daftarkan(Anggota anggota)
     {
-        // TODO(Level 8): anggota null -> ArgumentNullException; Id yang sudah
-        //   terdaftar -> InvalidOperationException; selain itu tambahkan ke
-        //   daftar.
-        throw new NotImplementedException("Level 8 belum diimplementasikan");
+        ArgumentNullException.ThrowIfNull(anggota);
+        if (DaftarAnggota.Any(a => a.Id == anggota.Id))
+        {
+            throw new InvalidOperationException("ID anggota sudah terdaftar.");
+        }
+        DaftarAnggota.Add(anggota);
     }
 
-    public Anggota? Cari(string id)
+    // Level 8: Cari anggota berdasarkan ID, NRP, atau NIP
+    public Anggota Cari(string id)
     {
-        // TODO(Level 8): kembalikan anggota dengan Id yang sama persis, atau
-        //   null.
-        throw new NotImplementedException("Level 8 belum diimplementasikan");
-    }
-
-    public int JumlahMahasiswa()
-    {
-        // TODO(Level 8): hitung anggota yang bertipe Mahasiswa (termasuk
-        //   turunannya, mis. Asisten -- ingat: turunan "adalah sebuah"
-        //   Mahasiswa). Petunjuk: `is` atau OfType<T>().
-        throw new NotImplementedException("Level 8 belum diimplementasikan");
-    }
-
-    public int JumlahDosen()
-    {
-        // TODO(Level 8): hitung anggota yang bertipe Dosen.
-        throw new NotImplementedException("Level 8 belum diimplementasikan");
+        return DaftarAnggota.FirstOrDefault(a => a.Id == id || (a is Mahasiswa m && m.Nrp == id) || (a is Dosen d && d.Nip == id));
     }
 }

@@ -1,12 +1,1 @@
-namespace Pertemuan05;
-
-// SUDAH LENGKAP -- jangan diubah. Objek pencatat yang akan DIMILIKI (komposisi)
-// oleh setiap Anggota pada Level 9.
-public class LogAktivitas
-{
-    private readonly List<string> _entri = new();
-
-    public IReadOnlyList<string> Semua => _entri.AsReadOnly();
-
-    public void Catat(string pesan) => _entri.Add(pesan);
-}
+namespace Pertemuan05; public class LogAktivitas { public string AktivitasTerakhir { get; set; } = string.Empty; private List<string> riwayatList = new List<string>(); public IEnumerable<string> Riwayat() => riwayatList; public void Catat(string aktivitas) { AktivitasTerakhir = aktivitas; riwayatList.Add(aktivitas); } }

@@ -1,33 +1,42 @@
-// File ini berisi TODO -- lihat SOAL.md untuk kontrak lengkap tiap level.
-// Bagian bertanda TODO(Level N) adalah tugas kalian; kode lain sudah
-// disediakan. Jangan mengubah nama/tipe yang sudah ada kecuali TODO
-// memintanya secara eksplisit.
-
 namespace Pertemuan05;
 
-// Pewarisan tunggal: Mahasiswa "adalah sebuah" Anggota.
 public class Mahasiswa : Anggota
 {
-    public string Nrp { get; }
-    public string Prodi { get; }
+    public string Nrp { get; set; }
+    public string Prodi { get; set; }
 
-    // TODO(Level 4): Mahasiswa boleh meminjam maksimal 3 buku -- atur
-    //   BatasPinjam = 3 di konstruktor ini (setter-nya protected, jadi bisa
-    //   diakses dari kelas turunan).
-    public Mahasiswa(string id, string nama, Alamat alamat, string nrp, string prodi)
-        : base(id, nama, alamat)
+    public Mahasiswa(string id, string nama, Alamat alamat, string nrp, string prodi) : base(id, nama, alamat)
     {
-        // TODO(Level 3): nrp/prodi null/kosong/spasi -> ArgumentException;
-        //   selain itu isi Nrp dan Prodi. (Konstruktor kelas induk sudah
-        //   dipanggil lewat `: base(...)` di atas.)
-        throw new NotImplementedException("Level 3 belum diimplementasikan");
+        if (string.IsNullOrWhiteSpace(nrp) || string.IsNullOrWhiteSpace(prodi))
+        {
+            throw new ArgumentException("NRP dan Prodi tidak boleh kosong.");
+        }
+        Nrp = nrp;
+        Prodi = prodi;
+        BatasPinjam = 3; // Level 4: Batas pinjam Mahasiswa = 3
     }
 
-    public string InfoLengkap()
+    public Mahasiswa(string id, string nama, Alamat alamat, string prodi) : base(id, nama, alamat)
     {
-        // TODO(Level 7): gabungkan Info() milik kelas induk dengan data khusus
-        //   mahasiswa, dipisah " | ": "<Info()> | NRP: <Nrp> | Prodi: <Prodi> |
-        //   Alamat: <Alamat>" (Alamat memakai ToString() milik objek Alamat).
-        throw new NotImplementedException("Level 7 belum diimplementasikan");
+        if (string.IsNullOrWhiteSpace(prodi))
+        {
+            throw new ArgumentException("Prodi tidak boleh kosong.");
+        }
+        Nrp = id;
+        Prodi = prodi;
+        BatasPinjam = 3;
+    }
+
+    public Mahasiswa(string id, string nama, Alamat alamat) : base(id, nama, alamat)
+    {
+        Nrp = id;
+        Prodi = "Informatika";
+        BatasPinjam = 3;
+    }
+
+    // Level 7: InfoLengkap untuk Mahasiswa
+    public override string InfoLengkap()
+    {
+        return $"{Info()} | NRP: {Nrp} | Prodi: {Prodi} | Alamat: {Alamat}";
     }
 }

@@ -5,15 +5,15 @@
 
 ## Identitas
 
-- Nama: TULIS_DI_SINI
-- NRP: TULIS_DI_SINI
-- Domain (NRP dibagi 6, ambil sisanya): TULIS_DI_SINI
+- Nama: Sayyidah Fatimah Azzahrah Rakhmatullah
+- NRP: 5025251223
+- Domain (NRP dibagi 6, ambil sisanya): 3-Bank Mini
 
 ## Domain saya
 
 Jelaskan dengan kata-kata sendiri (2-3 kalimat): siapa penggunanya dan masalah apa yang diselesaikan aplikasi ini.
 
-TULIS_DI_SINI
+Aplikasi Bank Mini ini mengelola rekening nasabah seperti Tabungan dan Deposito dengan aturan penarikan dan bunga yang berbeda-beda. Aplikasi ini memastikan keamanan transaksi serta transfer antar rekening menggunakan penanganan. Selain itu, data riwayat transaksi dilindungi dengan enkapsulasi agar aman dan tidak bisa diubah sembarangan dari luar
 
 ## Cara menjalankan
 
@@ -28,30 +28,48 @@ Ganti contoh ini dengan diagram kelas proyek kalian (sintaks Mermaid, tampil oto
 
 ```mermaid
 classDiagram
-    class Induk {
+    class Rekening {
         <<abstract>>
-        +Hitung() decimal*
+        -string _nomorRekening
+        -decimal _saldo
+        +string NomorRekening
+        +decimal Saldo
+        +Setor(decimal jumlah)
+        +Tarik(decimal jumlah)* decimal
+        +HitungBunga()* decimal
     }
-    class TurunanA
-    class TurunanB
-    Induk <|-- TurunanA
-    Induk <|-- TurunanB
+    class Tabungan {
+        +Tarik(decimal jumlah) decimal
+        +HitungBunga() decimal
+    }
+    class Deposito {
+        +bool SudahJatuhTempo
+        +Tarik(decimal jumlah) decimal
+        +HitungBunga() decimal
+    }
+    class SaldoTidakCukupException {
+    }
+    class RekeningBelumTerdaftarException{
+    }
+    Induk <|-- Tabungan : Inheritance
+    Induk <|-- Depodito : Inheritance
+    Nasabah "1" *-- "many" Rekening : Composition
 ```
 
 ## Status kebutuhan
 
 Isi kolom Status dengan `selesai`, `sebagian`, atau `belum`.
 
-| ID | Kebutuhan | Status | Catatan |
-|---|---|---|---|
-| K1 | Enkapsulasi | TULIS_DI_SINI | |
-| K2 | Komposisi dan pewarisan | TULIS_DI_SINI | |
-| K3 | Polimorfisme | TULIS_DI_SINI | |
-| K4 | Abstract class dan interface | TULIS_DI_SINI | |
-| K5 | Exception dan life cycle | TULIS_DI_SINI | |
-| K6 | Aplikasi berjalan | TULIS_DI_SINI | |
-| Khas | Aturan khas domain | TULIS_DI_SINI | |
-| Bonus | Bonus yang dikerjakan | TULIS_DI_SINI | |
+| ID    | Kebutuhan                    | Status        | Catatan |
+| ----- | ---------------------------- | ------------- | ------- |
+| K1    | Enkapsulasi                  | TULIS_DI_SINI |         |
+| K2    | Komposisi dan pewarisan      | TULIS_DI_SINI |         |
+| K3    | Polimorfisme                 | TULIS_DI_SINI |         |
+| K4    | Abstract class dan interface | TULIS_DI_SINI |         |
+| K5    | Exception dan life cycle     | TULIS_DI_SINI |         |
+| K6    | Aplikasi berjalan            | TULIS_DI_SINI |         |
+| Khas  | Aturan khas domain           | TULIS_DI_SINI |         |
+| Bonus | Bonus yang dikerjakan        | TULIS_DI_SINI |         |
 
 ## Yang belum selesai
 

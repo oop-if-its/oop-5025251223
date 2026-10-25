@@ -13,7 +13,7 @@
 
 Jelaskan dengan kata-kata sendiri (2-3 kalimat): siapa penggunanya dan masalah apa yang diselesaikan aplikasi ini.
 
-Aplikasi Bank Mini ini mengelola rekening nasabah seperti Tabungan dan Deposito dengan aturan penarikan dan bunga yang berbeda-beda. Aplikasi ini memastikan keamanan transaksi serta transfer antar rekening menggunakan penanganan. Selain itu, data riwayat transaksi dilindungi dengan enkapsulasi agar aman dan tidak bisa diubah sembarangan dari luar
+Aplikasi Bank Mini ini mengelola rekening nasabah seperti Tabungan dan Deposito dengan aturan penarikan dan bunga yang berbeda-beda. Aplikasi ini memastikan keamanan transaksi serta transfer antar rekening menggunakan penanganan. Selain itu, data riwayat transaksi dilindungi dengan enkapsulasi agar aman dan tidak bisa diubah sembarangan dari luar.
 
 ## Cara menjalankan
 

@@ -1,0 +1,12 @@
+C:\Users\LENOVO\Downloads\oop-5025251223\pertemuan-06\src\bin\Debug\net8.0\Pertemuan06.deps.json
+C:\Users\LENOVO\Downloads\oop-5025251223\pertemuan-06\src\bin\Debug\net8.0\Pertemuan06.dll
+C:\Users\LENOVO\Downloads\oop-5025251223\pertemuan-06\src\bin\Debug\net8.0\Pertemuan06.pdb
+C:\Users\LENOVO\Downloads\oop-5025251223\pertemuan-06\src\obj\Debug\net8.0\Pertemuan06.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Downloads\oop-5025251223\pertemuan-06\src\obj\Debug\net8.0\Pertemuan06.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Downloads\oop-5025251223\pertemuan-06\src\obj\Debug\net8.0\Pertemuan06.AssemblyInfo.cs
+C:\Users\LENOVO\Downloads\oop-5025251223\pertemuan-06\src\obj\Debug\net8.0\Pertemuan06.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Downloads\oop-5025251223\pertemuan-06\src\obj\Debug\net8.0\Pertemuan06.sourcelink.json
+C:\Users\LENOVO\Downloads\oop-5025251223\pertemuan-06\src\obj\Debug\net8.0\Pertemuan06.dll
+C:\Users\LENOVO\Downloads\oop-5025251223\pertemuan-06\src\obj\Debug\net8.0\refint\Pertemuan06.dll
+C:\Users\LENOVO\Downloads\oop-5025251223\pertemuan-06\src\obj\Debug\net8.0\Pertemuan06.pdb
+C:\Users\LENOVO\Downloads\oop-5025251223\pertemuan-06\src\obj\Debug\net8.0\ref\Pertemuan06.dll

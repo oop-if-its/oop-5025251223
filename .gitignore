@@ -1,9 +1,0 @@
-# Build output .NET (dihasilkan ulang otomatis oleh dotnet build/test,
-# jangan pernah di-commit)
-bin/
-obj/
-
-# File IDE/editor
-.vs/
-.vscode/
-*.user

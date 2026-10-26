@@ -66,16 +66,16 @@ classDiagram
 
 Isi kolom Status dengan `selesai`, `sebagian`, atau `belum`.
 
-| ID    | Kebutuhan                    | Status        | Catatan |
-| ----- | ---------------------------- | ------------- | ------- |
-| K1    | Enkapsulasi                  | TULIS_DI_SINI |         |
-| K2    | Komposisi dan pewarisan      | TULIS_DI_SINI |         |
-| K3    | Polimorfisme                 | TULIS_DI_SINI |         |
-| K4    | Abstract class dan interface | TULIS_DI_SINI |         |
-| K5    | Exception dan life cycle     | TULIS_DI_SINI |         |
-| K6    | Aplikasi berjalan            | TULIS_DI_SINI |         |
-| Khas  | Aturan khas domain           | TULIS_DI_SINI |         |
-| Bonus | Bonus yang dikerjakan        | TULIS_DI_SINI |         |
+| ID    | Kebutuhan                    | Status | Catatan                     |
+| ----- | ---------------------------- | ------ | --------------------------- |
+| K1    | Enkapsulasi                  | belum  | baru rancang struktur kelas |
+| K2    | Komposisi dan pewarisan      | belum  |                             |
+| K3    | Polimorfisme                 | belum  |                             |
+| K4    | Abstract class dan interface | belum  |                             |
+| K5    | Exception dan life cycle     | belum  |                             |
+| K6    | Aplikasi berjalan            | belum  |                             |
+| Khas  | Aturan khas domain           | belum  |                             |
+| Bonus | Bonus yang dikerjakan        | belum  | diagram mermaid             |
 
 ## Yang belum selesai
 

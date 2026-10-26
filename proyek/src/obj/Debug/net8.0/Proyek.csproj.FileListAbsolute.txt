@@ -1,0 +1,15 @@
+C:\Users\LENOVO\Downloads\oop-5025251223\proyek\src\bin\Debug\net8.0\Proyek.exe
+C:\Users\LENOVO\Downloads\oop-5025251223\proyek\src\bin\Debug\net8.0\Proyek.deps.json
+C:\Users\LENOVO\Downloads\oop-5025251223\proyek\src\bin\Debug\net8.0\Proyek.runtimeconfig.json
+C:\Users\LENOVO\Downloads\oop-5025251223\proyek\src\bin\Debug\net8.0\Proyek.dll
+C:\Users\LENOVO\Downloads\oop-5025251223\proyek\src\bin\Debug\net8.0\Proyek.pdb
+C:\Users\LENOVO\Downloads\oop-5025251223\proyek\src\obj\Debug\net8.0\Proyek.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Downloads\oop-5025251223\proyek\src\obj\Debug\net8.0\Proyek.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Downloads\oop-5025251223\proyek\src\obj\Debug\net8.0\Proyek.AssemblyInfo.cs
+C:\Users\LENOVO\Downloads\oop-5025251223\proyek\src\obj\Debug\net8.0\Proyek.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Downloads\oop-5025251223\proyek\src\obj\Debug\net8.0\Proyek.sourcelink.json
+C:\Users\LENOVO\Downloads\oop-5025251223\proyek\src\obj\Debug\net8.0\Proyek.dll
+C:\Users\LENOVO\Downloads\oop-5025251223\proyek\src\obj\Debug\net8.0\refint\Proyek.dll
+C:\Users\LENOVO\Downloads\oop-5025251223\proyek\src\obj\Debug\net8.0\Proyek.pdb
+C:\Users\LENOVO\Downloads\oop-5025251223\proyek\src\obj\Debug\net8.0\Proyek.genruntimeconfig.cache
+C:\Users\LENOVO\Downloads\oop-5025251223\proyek\src\obj\Debug\net8.0\ref\Proyek.dll

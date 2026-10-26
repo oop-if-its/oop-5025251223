@@ -37,7 +37,6 @@ namespace ProyekBankMini
             protected set => _saldo = value < 0 ? throw new ArgumentException("Saldo tidak boleh negatif.") : value; 
         }
 
-        // IReadOnlyList agar riwayat bisa dibaca tapi aman dari manipulasi luar (K1)
         public IReadOnlyList<Transaksi> RiwayatTransaksi => _riwayatTransaksi.AsReadOnly();
 
         protected Rekening(string nomorRekening, decimal saldoAwal)
@@ -54,7 +53,12 @@ namespace ProyekBankMini
             _riwayatTransaksi.Add(new Transaksi(keterangan, jumlah));
         }
 
-        // Method abstrak yang wajib di-override kelas turunan (K3, K4)
+        // Method pembantu agar kelas turunan (seperti Giro/Tabungan) bisa mencatat riwayat penarikan
+        protected void CatatTransaksi(string keterangan, decimal jumlah)
+        {
+            _riwayatTransaksi.Add(new Transaksi(keterangan, jumlah));
+        }
+
         public abstract decimal Tarik(decimal jumlah);
         public abstract decimal HitungBunga();
 

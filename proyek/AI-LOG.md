@@ -24,3 +24,15 @@ Log yang jujur tidak mengurangi nilai; log yang tidak sesuai dengan kode, atau i
 - Prompt: "buatkan kerangka kode C# untuk kelas abstrak Rekening, Tabungan, Deposito, Nasabah, dan Exceptions sesuai prinsip PBO"
 - Dipakai: berkas `Exceptions.cs`, `Rekening.cs`, `Tabungan.cs`, `Deposito.cs`, dan `Nasabah.cs`
 - Diubah: menyalin & memahami ulang bagian _try-catch rollback_ pada fungsi transfer biar gak ngang ngong pas ujian lisan:)
+
+## Implementasi Kelas Giro & Penyesuaian Method Tarik
+
+- Prompt: "bagaimana cara mengimplementasikan kelas Giro dengan fitur overdraft di C# dan menyamakan tipe return method Tarik?"
+- Dipakai: struktur kelas `Giro.cs` serta penyesuaian tipe kembalian `decimal` pada method `Tarik` di kelas `Rekening`
+- Diubah: menyesuaikan penanganan exception dan pencatatan riwayat transaksi agar cocok dengan arsitektur yang sudah dibuat
+
+## Perbaikan Error Kompilasi & Kelas Giro
+
+- Prompt: "fix error C# return type must be decimal untuk method Tarik di kelas turunan dan cara nambahin fitur overdraft di giro"
+- Dipakai: solusi penyesuaian tipe data kembalian method `Tarik` dan logika pengecekan _overdraft_ di `Giro.cs`
+- Diubah: menyesuaikan method pembantu pencatatan transaksi di `Rekening.cs` dan merapikan skenario pengujian di `Program.cs`

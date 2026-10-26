@@ -66,17 +66,17 @@ classDiagram
 
 Isi kolom Status dengan `selesai`, `sebagian`, atau `belum`.
 
-| ID    | Kebutuhan                    | Status | Catatan                     |
-| ----- | ---------------------------- | ------ | --------------------------- |
-| K1    | Enkapsulasi                  | belum  | baru rancang struktur kelas |
-| K2    | Komposisi dan pewarisan      | belum  |                             |
-| K3    | Polimorfisme                 | belum  |                             |
-| K4    | Abstract class dan interface | belum  |                             |
-| K5    | Exception dan life cycle     | belum  |                             |
-| K6    | Aplikasi berjalan            | belum  |                             |
-| Khas  | Aturan khas domain           | belum  |                             |
-| Bonus | Bonus yang dikerjakan        | belum  | diagram mermaid             |
+| ID    | Kebutuhan                    | Status  | Catatan                     |
+| ----- | ---------------------------- | ------- | --------------------------- |
+| K1    | Enkapsulasi                  | selesai | baru rancang struktur kelas |
+| K2    | Komposisi dan pewarisan      | selesai | relasi nasabah & rekening   |
+| K3    | Polimorfisme                 | selesai | method override tarik/bunga |
+| K4    | Abstract class dan interface | selesai | kls abstrak rekening        |
+| K5    | Exception dan life cycle     | selesai | custom exception            |
+| K6    | Aplikasi berjalan            | selesai | berhasil dotnetrun          |
+| Khas  | Aturan khas domain           | selesai | penalti deposito            |
+| Bonus | Bonus yang dikerjakan        | selesai | diagram mermaid             |
 
 ## Yang belum selesai
 
-TULIS_DI_SINI (tulis "tidak ada" bila semuanya selesai)
+tidak ada (tulis "tidak ada" bila semuanya selesai)
